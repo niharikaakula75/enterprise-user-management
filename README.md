@@ -1,30 +1,32 @@
-# Enterprise User Management API
+# Enterprise User Management System
 
-Spring Boot REST API for user management with CRUD, pagination, filtering, validation, and OpenAPI/Swagger UI. Includes global exception handling and production-ready actuator endpoints.
+Spring Boot REST API for managing users in an enterprise system.
+
+## Features
+- Create, update, delete users
+- Pagination & filtering
+- DTO validation
+- Global exception handling
+- Swagger API documentation
+- JPA + Hibernate integration
+- Docker support
 
 ## Tech Stack
-- Java 17, Spring Boot 3
-- Spring Web, Spring Data JPA
-- H2 (default) + PostgreSQL (profile)
-- Validation, OpenAPI/Swagger UI, Actuator
+- Java 17
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- PostgreSQL / MySQL
+- Maven
+- Docker
 
-## Run locally
+## API Examples
+POST /api/users  
+GET /api/users  
+PUT /api/users/{id}  
+DELETE /api/users/{id}
+
+## Run Locally
 ```bash
+mvn clean install
 mvn spring-boot:run
-```
-
-Swagger UI: `http://localhost:8080/swagger-ui.html`
-
-## Run with PostgreSQL (Docker)
-```bash
-docker compose up -d
-SPRING_PROFILES_ACTIVE=postgres mvn spring-boot:run
-```
-
-## Key Endpoints
-- `GET /api/v1/users` (pagination + optional filters)
-- `POST /api/v1/users`
-- `GET /api/v1/users/<built-in function id>`
-- `PUT /api/v1/users/<built-in function id>`
-- `PATCH /api/v1/users/<built-in function id>`
-- `DELETE /api/v1/users/<built-in function id>`
